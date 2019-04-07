@@ -2,6 +2,8 @@
 	week 9 spaceship Objects 1 
 */
 
+
+
 var spaceship = { 
     x: 0, 
     y: 200,
@@ -19,18 +21,18 @@ var spaceship = {
     fill('lightgray');
         
     ellipse(this.x, this.y, 
-            this.size * .5, 
+            this.size * 0.5, 
             this.size * 1.5); //top
         
-    ellipse(this.x - this.size / .5, 
+    ellipse(this.x - this.size / 0.5, 
             this.y + this.size * 2, 
             this.size - this.size / 2, 
             this.size * 1.5); // left
         
-    ellipse(this.x + this.size / .5, 
+    ellipse(this.x + this.size / 0.5, 
             this.y + this.size * 2, 
             this.size - this.size / 2, 
-            this.size * 1.5); // rightt
+            this.size * 1.5); // right
         
    /* // left wing
     ellipse(this.x - this.size * 2, this.y + this.size * 2, this.size + this.size);
@@ -72,6 +74,7 @@ var spaceship = {
     },
 };
 
+
 var asteroids = [];
 
 function setup() {
@@ -83,9 +86,10 @@ function setup() {
 
 function draw() {
     background(51);
-    
+       
     // adds random asteroid
     if (random(100) > 99) {
+        
         // create an asteroid
         asteroids.push(new Asteroid());
         }

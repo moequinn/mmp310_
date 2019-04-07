@@ -1,6 +1,7 @@
 /*
-	week 9 spaceship Objects 1 
+	week 9 spaceship Objects 2 
 */
+var shoot;
 
 var spaceship = { 
     x: 0, 
@@ -44,6 +45,19 @@ var spaceship = {
     if (keyIsDown(LEFT_ARROW)) {
         this.x -= 5;
     }
+
+    //Shooting
+if(keyWentDown("space") && !playerdead){
+	var bullet = createSprite(player.position.x,player.position.y);
+	bullet.addImage("normal", bulletImage);
+	bullet.setSpeed(10+player.getSpeed(), player.rotation);
+	bullet.life = 30;
+	bullets.add(bullet);
+	shoot.play();
+//	bullet.debug = true;
+
+	}
+	drawSprites();
         
     },
 };

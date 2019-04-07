@@ -36,8 +36,8 @@ function draw() {
                 var choice = random(2);
                 if (choice > 1) {
 				
-				var _r = random(0, 255, x);
-				var _g = random(60, 255, y);
+				var _r = random(0, 255);
+				var _g = random(60, 255);
 				var _b = random(100, 255);
                 
                 // square pattern
