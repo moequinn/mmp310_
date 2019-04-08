@@ -1,18 +1,26 @@
 /*  Asteroid class  */
 
-class Asteroid extends Entity {
+class Asteroid {
 	constructor() {
-		super(random(width), -100);
-		this.speed.x = random(-1, 1);
-		this.speed.y = random(5);
-		
-		this.color = color(random(100, 200), random(200), random(200));
+		this.x = random(width * 2);
+		this.y = -100;
+		this.size = 100;
+		this.speed = {
+			x: random(-1, 1),
+			y: random(5)
+		};
+        this.color = color(random(100), color(random(200), color(random(255))));
 	}
 	
 	display() {
 		fill(this.color);
 		noStroke();
 		ellipse(this.x, this.y, this.size);
+	}
+	
+	update() {
+		this.x += this.speed.x;
+		this.y += this.speed.y;
 	}
 	
 	collide() {
