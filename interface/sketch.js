@@ -6,7 +6,7 @@
 
 /* global variables */
 var bg = "green";
-var g = 255;
+var g = random(0,255);
 var columns = 8;
 var rows = 8;
 
@@ -77,29 +77,28 @@ function pattern() {
             var r = random(3);
             if (r > 2) {
                 
-                var _r = random(0, 255, x);
-				var _g = random(60, 255, y);
+                var _r = random(0, 255,);
+				var _g = random(60, 255,);
 				var _b = random(100, 255);
                 
-                // square pattern
+                // square pattern 1
 				fill(_r, _g, _b);
                 rect(x, y, w, h);
                 
 			} else if (r > 1) {
                 
+                // square pattern 2
                 stroke(random(0, 255));
                 rect(x, y, w, h);
                 ellipse(x, y, w / 2, h / 2);
                 
 			} else {
                 
+                // square pattern 3
                 fill(random(255));
                 rect(x, y, w, h);
-                rect(x, y, w / 2, h / 2);
-                
+                rect(x, y, w / 2, h / 2);   
 			}
-			
-			
 			// end drawing
 		}
 	}

@@ -3,70 +3,46 @@
 	mmp 310 week 8
 */
 
-var rookies;
-//var coaches;
+var rookies; // rookies csv data
+var offset = 0; // offset varible
 
 function preload() {
-	rookies = loadTable('rookies.csv', 'csv', 'header');
+	rookies = loadTable('rookies.csv', 'csv', 'header'); // loader for the data
 }
 
-
-/*function preload() {
-	coaches = loadTable('coaches.csv', 'csv', 'header');
-}
-*/
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(windowWidth, windowHeight); // canvas position and size
 	textSize(50);
 	textAlign(LEFT, CENTER);
 	noStroke();
 }
 
-function draw() {
+function draw() {  // drawing sketch
 	background(101);
 	
-	for (let i = 0; i < rookies.getRowCount(); i++) {
-		let ast = rookies.getNum(i, 'ASTper');
-		let min = rookies.getNum(i, 'MPper');
-		let x = map(min, 0, 36, 0, width);
-		let y = map(ast, 0, 6, height, 0);
+	for (let i = 0; i < rookies.getRowCount(); i++) {   // rookies data file
+		let ast = rookies.getNum(i, 'ASTper');  // number of AST
+		let min = rookies.getNum(i, 'MPper');  // number of MP
+		let x = map(min, 0, 36, 0, width);  // x's width
+		let y = map(ast, 0, 6, height, 0);  // y's height
 		
 		fill('lightblue');
-		if (dist(x, y, mouseX, mouseY) < 5) {
+		if (dist(x + offset/2, y + offset, mouseX, mouseY) < 10) {  // distance
 			let player = rookies.getString(i, 'Player').split('\\')[0];
+            
+            fill('white');  // color for the player text
 			text(player, 100, 200);
+            
+            fill('yellow');  // color for the ast text
 			text(ast, 100, 250);
+            
+            fill('pink');  // color for the min text
 			text(min, 100, 300);
-			fill('blue');	
-		}
-		ellipse(x + 30, y - 15, 20);
-        
-        fill('darkblue');
-        
-        ellipse(x, y, 15);
+            
+            fill('blue');  // color for the circle
+            }
+            stroke('white');
+            ellipse(x, y, 25); // graph circle
+//            rect(x, y, offset/2, offset*2); // graph recttangle
 	}
 }
-
-
-/*function draw() {
-	background(51);
-	
-	for (let i = 0; i < coaches.getRowCount(); i++) {
-		let ast = coaches.getNum(i, 'ASTper');
-		let min = coaches.getNum(i, 'MPper');
-		let x = map(min, 0, 36, 0, width);
-		let y = map(ast, 0, 8, height, 0);
-		
-		fill('white');
-		if (dist(x, y, mouseX, mouseY) < 5) {
-			let player = coaches.getString(i, 'Player').split('\\')[0];
-			text(player, 100, 200);
-			text(ast, 100, 250);
-			text(min, 100, 300);
-			fill('gold');	
-		}
-		ellipse(x, y, 10);
-	}
-}
-*/
-
