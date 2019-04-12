@@ -12,17 +12,19 @@ class Asteroid extends Entity {
 	display() {
 		fill(this.color);
 		noStroke();
-		ellipse(this.x, this.y, random(this.size));
+		ellipse(this.x, this.y, this.size); 
 	}
 	
-	collide() {
-		var d = dist(this.x, this.y, spaceship.x, spaceship.y);
-		if (d < this.size / 2) {
-			textSize(100);
-			textAlign(CENTER, CENTER);
-			fill('orange');
-			text("Game Over", width/2, height/2);
-			noLoop();	
-		}
-	}
+//	collide() {
+//		var d = dist(this.x, this.y, spaceship.x, spaceship.y);
+//		if (d < this.size / 2) {
+//			textSize(100);
+//			textAlign(CENTER, CENTER);
+//			fill('orange');
+//			text("Game Over", width/2, height/2);
+//			noLoop();	
+//		}
+//	}
 }
+
+
