@@ -2,29 +2,11 @@
 
 class Spaceship extends Entity {
 	constructor() {
-		super(width/2, height - 200);
+		super(width/2, height - 80);
 	}
 	
 	display() {
-		triangle(this.x, this.y, 
-             this.x - this.size * 2, this.y + this.size * 2, 
-             this.x + this.size * 2, this.y + this.size * 2);
-        
-    fill('lightgray');
-        
-    ellipse(this.x, this.y, 
-            this.size * 0.5, 
-            this.size * 1.5); //top
-        
-    ellipse(this.x - this.size / 0.5, 
-            this.y + this.size * 2, 
-            this.size - this.size / 2, 
-            this.size * 1.5); // left
-        
-    ellipse(this.x + this.size / 0.5, 
-            this.y + this.size * 2, 
-            this.size - this.size / 2, 
-            this.size * 1.5); // right
+        image(spaceshipImage, this.x - 265, this.y - 100, 264, 179); // spaceship Image
 	}
 	
 	controls() {

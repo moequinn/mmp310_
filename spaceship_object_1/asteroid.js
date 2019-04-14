@@ -12,19 +12,9 @@ class Asteroid extends Entity {
 	display() {
 		fill(this.color);
 		noStroke();
-		ellipse(this.x, this.y, this.size); 
+//		ellipse(this.x, this.y, this.size);
+        image(asteroidImage, this.x - 120, this.y - 100, 200, 200); // asteroid Image
 	}
-	
-//	collide() {
-//		var d = dist(this.x, this.y, spaceship.x, spaceship.y);
-//		if (d < this.size / 2) {
-//			textSize(100);
-//			textAlign(CENTER, CENTER);
-//			fill('orange');
-//			text("Game Over", width/2, height/2);
-//			noLoop();	
-//		}
-//	}
 }
 
 

@@ -1,8 +1,4 @@
-/*
-	week 6
-	dom library
-	ui 
-*/
+/* week 6 dom library ui */
 
 /* global variables */
 var bg = "green";
@@ -16,16 +12,13 @@ function setup() {
 	
 	var button = createButton("Save Image");
 	button.mousePressed(saveImage);
-//	button.style('color', bg);
 	button.style('font-family', 'monaco');
 	button.id('my-button');
 	button.class('interface');
-//	button.position(0, height - 50);
 	
 	var generatePattern = createButton("Generate Pattern");
 	generatePattern.mousePressed(pattern);
 	generatePattern.class('interface');
-//	generatePattern.position(180, height - 50);
 	
 	// columns slider
 	createDiv("Number of Columns");
@@ -41,8 +34,6 @@ function setup() {
 	createDiv("Background Color");
 	var colorSlider = createSlider(0, 255, g);
 	colorSlider.input(setColor);
-	
-	
 }
 
 function setColumn() {

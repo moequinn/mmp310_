@@ -3,27 +3,40 @@
 */
 
 
-
+var laser;
+//var gif_loadImg, gif_createImg;
+var backgroundImage;
+var spaceshipImage;
+var asteroidImage;
 var spaceship;
 var asteroids = [];
 var lasers = [];
 
 function preload() {
-	// if you have images
+//    gif_loadImg = loadImage("space_background2.gif");
+//    gif_createImg = createImg("space_background2.gif");
+    laser = loadImage("laser_beam.gif");
+    backgroundImage = loadImage("space_background2.gif");
+    spaceshipImage = loadImage("spaceship1.gif");
+    asteroidImage = loadImage("asteroid1.gif");
 }
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	noStroke();
+//    saveFrames("spaceship_object_1", "png", 2, 22);
 	
 	spaceship = new Spaceship();
 }
 
 function draw() {
 	background(51);
+    image(backgroundImage, 0, 0, windowWidth, windowHeight); // background Image
+    
+//    gif_createImg.position(0, 0, windowWidth, windowHeight);
 	
 	// adds random asteroid
-	if (random(100) > 99) {
+	if (random(100) > 95) {
 		// create an asteroid
 		asteroids.push(new Asteroid());
 	}
