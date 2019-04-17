@@ -1,0 +1,33 @@
+/*@import url('https://fonts.googleapis.com/css?family=Hanalei+Fill');*/
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+body {
+	margin: 0;
+	overflow: hidden;
+    text-align: center;
+    background-color: lightcyan;
+}
+
+button {
+	font-family: 'Inconsolata', monospace;
+	font-size: 1.5em;
+	background-color: lightblue;
+	color: white;
+	border-color: blue lightblue aqua;
+	margin: 0.25em;
+}
+
+.interface {
+	color: #002399;
+}
+
+div {
+	font-size: 2em;
+	font-family: 'Inconsolata', monospace;
+}
+
+input[type="range"] {
+	zoom: 2;
+}
+

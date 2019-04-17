@@ -4,7 +4,11 @@
 var cats = []; // empty cats
 
 function mousePressed() {
-	cats.push([mouseX, mouseY]);
+	let r = "#1ccdcc";
+    if(mousePressed > width/2); {
+        r = "#48cdcc";
+    }
+    cats.push([mouseX, mouseY, r]);  
 }
 
 function setup() {
@@ -14,12 +18,12 @@ function setup() {
 function draw() {
 	background(0);
 	for (let i = 0; i < cats.length; i++) {
-		cat(cats[i][0], cats[i][1], 100);
+		cat(cats[i][0], cats[i][1], 100, cats[i][2]);
 		cats[i][1] += 2;
 	}
 }
 
-function cat(x, y, s) {
+function cat(x, y, s, c) {
     
 	// cat drawing
 	fill(s/ 2, 0, s + x/4);
@@ -28,7 +32,7 @@ function cat(x, y, s) {
     ellipse(x - 60, y - 10, s/2); // left ear
     ellipse(x + 60, y - 10, s/2); // right ear
     
-    fill(0);
+    fill(c);
     noStroke();
     ellipse(x - 60, y - 10, s/4); // inner left ear
     ellipse(x + 60, y - 10, s/4); // inner right ear
@@ -46,7 +50,7 @@ function cat(x, y, s) {
 	ellipse(x - s/4, y, s/4, s/2); // left eye
 	ellipse(x + s/4, y, s/4, s/2); // right eye
     
-    fill(0);
+    fill(c);
 	ellipse(x - s/4, y, s/6, s/4); // left eye
 	ellipse(x + s/4, y, s/6, s/4); // right eye
     
