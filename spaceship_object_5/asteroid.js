@@ -14,8 +14,8 @@ class Asteroid extends Entity {
 	display() {
 		fill(this.color);
 		noStroke();
-		ellipse(this.x, this.y, this.size); // testing position
-//        image(asteroidImage, this.x - 120, this.y - 100,  this.size + this.offset, this.size + this.offset); // asteroid Image
+//		ellipse(this.x, this.y, this.size); // testing position
+        image(asteroidImage, this.x - 120, this.y - 100,  this.size + this.offset, this.size + this.offset); // asteroid Image
 	}
     
     update() {

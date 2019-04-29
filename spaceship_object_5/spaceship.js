@@ -12,10 +12,10 @@ class Spaceship extends Entity {
         fill(this.color);
         noStroke();
 //        image(spaceshipImage, this.x - 265, this.y - 100, 264, 179); // spaceship Image
-//        image(spaceshipImage, this.x - 132, this.y - 100, 264, 179); // spaceship Image
-        ellipse(this.x, this.y - 30, 264, 160); // spaceship
-        ellipse(this.x - 30, this.y + 60, 30, 60); // spaceship thruster left
-        ellipse(this.x + 30, this.y + 60, 30, 60); // spaceship thruster right
+        image(spaceshipImage, this.x - 132, this.y - 100, 264, 179); // spaceship Image
+//        ellipse(this.x, this.y - 30, 264, 160); // spaceship
+//        ellipse(this.x - 30, this.y + 60, 30, 60); // spaceship thruster left
+//        ellipse(this.x + 30, this.y + 60, 30, 60); // spaceship thruster right
     
 	}
 	
