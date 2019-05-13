@@ -139,6 +139,11 @@ function intro() {
     fill(250);
     textSize(60);
     text('SPACE RAIDER', width/2, height/2- 200);
+    
+    fill(250);
+    textSize(30);
+    text('PRESS THE SPACEBAR KEY TO SHOOT', width/2, height/2 + 200);
+    text('PRESS THE LEFT & RIGHT ARROW KEYS TO MOVE', width/2, height/2 + 300);
 }
 
 function game() {
