@@ -14,7 +14,7 @@ var lasers = [];
 var powerups = [];
 
 // probability asteroid spawned in each frame
-var asteroidProb = 99;
+var asteroidProb = 98;
 
 // laser timeout counter
 var laserTimeout = 24; // number of frames between laser firing
@@ -71,10 +71,10 @@ function preload() {
     
     
     bg = loadSound("sound/bg.mp3");    
-//    crashse = loadSound("sound/crashse.mp3");
-    jet = loadSound("sound/jet.mp3");
+//    crash = loadSound("sound/crash.mp3");
+//    jet = loadSound("sound/jet2.mp3");
     lasershot = loadSound("sound/lasershot.mp3");
-//    powerUp = loadSound("sound/powerup");
+    pow = loadSound("sound/powerup.mp3");
 }
 
 function setup() {
@@ -87,6 +87,7 @@ function setup() {
     
     bg.play();
     bg.loop();
+    bg.setVolume(0.3);
     
 	spaceship = new Spaceship();
 }
@@ -171,6 +172,7 @@ function game() {
             lasers.push(new Laser(60, 0));
 			laserCounter = laserTimeout;
             lasershot.play();
+            lasershot.play();
 		}
 	} else {
 		laserCounter -= 1;	
@@ -187,6 +189,8 @@ function game() {
 			laserTimeout = 12;
 			powerups[i].died = true;
 			laserRed += 20;
+            pow.play();
+            pow.setVolume(0.3);
 		}
 		powerups[i].display();
 		powerups[i].update();
@@ -201,7 +205,9 @@ function game() {
 			if (i != j) {
 				if (asteroids[i].collide(asteroids[j])) {
 					asteroids[i].speed.x *= -1;	
-					asteroids[j].speed.x *= -1;	
+					asteroids[j].speed.x *= -1;
+//                    crash.play();
+//                    crash.setVolume(0.3);
 				}
 			}
 		}
@@ -229,6 +235,8 @@ function game() {
 				    asteroidProb -= 0.5;
 				if (laserTimeout < 24) {
 					laserTimeout += 0.5;
+//                    crash.play();
+//                    crash.setVolume(0.3);
 				}
 			}
 		}

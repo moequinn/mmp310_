@@ -24,12 +24,12 @@ class Spaceship extends Entity {
 		if (keyIsDown(RIGHT_ARROW)) {
 			this.speed.x = 15;
 //            jet.play();
-            
+//            jet.setVolume(0.3);        
             
 		} else if (keyIsDown(LEFT_ARROW)) {
 			this.speed.x = -15;
 //            jet.play();
-            
+//            jet.setVolume(0.3);
             
 		} else {
 			this.speed.x = 0;	
