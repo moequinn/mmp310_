@@ -13,16 +13,7 @@ class Laser extends Entity {
 		rectMode(CENTER);
 
 //        rect(this.x, this.y - 95, 10, 25); // top laser
-        image(laser,this.x, this.y, 60, 80); // top laser beam png
-        
-        fill('blue');
-		noStroke();
-        
-//        rect(this.x - 31, this.y - 85, 10, 25); // left laser
-//        image(laser, this.x + 31, this.y - 110, 60, 80); // left laser beam png
-        
-//        rect(this.x + 31, this.y - 85, 10, 25); // right laser
-//        image(laser,this.x - 31, this.y - 110, 60, 80); // right laser beam png
+        image(laser,this.x, this.y, 30, 50); // top laser beam png
 	}
     
     update() {

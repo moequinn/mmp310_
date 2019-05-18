@@ -9,11 +9,11 @@ class Powerup extends Entity {
 	}
 	
 	display() {
-		fill('blue');
-		noStroke();
-		rect(this.x, this.y, this.size, this.size);
-        image(powerupImage, this.x, this.y, 100, 100); // power-up Image
-//        powerUp.play();
+        
+        // power-up
+        fill('#00A4F7');
+        ellipse(this.x + random(-5, 5), this.y + random(-5, 5), this.size - 20, this.size - 20); // Blue Aura
+        image(powerupImage, this.x, this.y, 50, 50); // power-up Image
 	}
 	
 	update() {
