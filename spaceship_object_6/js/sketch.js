@@ -39,6 +39,7 @@ var crash;
 var jet;
 var shot;
 var pow;
+var next;
 var setVolume;
 
 /*
@@ -70,6 +71,7 @@ function preload() {
     jet = loadSound("sound/jet3.mp3");
     lasershot = loadSound("sound/lasershot.mp3");
     pow = loadSound("sound/powerup.mp3");
+    next = loadSound("sound/nextstage.mp3");
 }
 
 function setup() {
@@ -149,13 +151,14 @@ function intro() {
 }
 
 function game() {
-//    image(backgroundImage, width / 2, height / 2, windowWidth, windowHeight); // background Image
-    //    gif_createImg.show();
 
+    // takes you to the next level
     if (score == 20) {
         nextLevelCounter = nextLevelTimeout;
         level++;
         score = 0;
+        next.play();
+        next.setVolume(0.3);
 
         //  make the game harder
 
@@ -163,6 +166,7 @@ function game() {
 
     if (nextLevelCounter > 0) {
         nextLevelCounter--;
+
         text('LEVEL: ' + level, width / 2, height / 2);
     }
 
@@ -187,7 +191,7 @@ function game() {
             lasers.push(new Laser(60, 0));
             laserCounter = laserTimeout;
             lasershot.play();
-            lasershot.setVolume(0.3);
+            lasershot.setVolume(0.2);
         }
     } else {
         laserCounter -= 1;
@@ -222,8 +226,6 @@ function game() {
                 if (asteroids[i].collide(asteroids[j])) {
                     asteroids[i].speed.x *= -1;
                     asteroids[j].speed.x *= -1;
-                    //                    crash.play();
-                    //                    crash.setVolume(0.3);
                 }
             }
         }
@@ -249,7 +251,7 @@ function game() {
                 score += 1;
 
                 // after player hits asteroid, increase probability
-                if (asteroidProb > 95)
+                if (asteroidProb > 99)
                     asteroidProb -= 0.5;
                 if (laserTimeout < 24) {
                     laserTimeout += 0.5;
