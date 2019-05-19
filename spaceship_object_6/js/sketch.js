@@ -139,6 +139,7 @@ function intro() {
 
     fill(250);
     textSize(60);
+    textFont('Luckiest Guy');
     text('SPACE RAIDER', width / 2, height / 2 - 200);
 
     fill(250);
